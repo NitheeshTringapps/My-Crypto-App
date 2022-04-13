@@ -43,15 +43,15 @@ public class Account implements UserTransactions{
 	public void buy() {
 		buyFrame = new JFrame("Buy a Coin");
 		JLabel l1=new JLabel("<html>Enter the coin you want to buy in full name: <br/>Example: bitcoin, ethereum, cardano, etc<html>");  
-	    l1.setBounds(50,50, 350,60);
+	    	l1.setBounds(50,50, 350,60);
 		
-	    tf1=new JTextField(); 
+	    	tf1=new JTextField(); 
 		tf1.setBounds(150,150,95,30);
 		
 		JButton b1= new JButton("Search");
 		b1.setBounds(150,200,95,30);
         
-        b1.addActionListener(new ActionListener() {
+        	b1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				coinName = tf1.getText();
@@ -66,12 +66,12 @@ public class Account implements UserTransactions{
 				}
 				final JFrame buyPriceFrame = new JFrame();
 				JLabel l2=new JLabel("Current price of the coin: " + price);  
-			    l2.setBounds(100,100, 300,30);
+			    	l2.setBounds(100,100, 300,30);
 			    
-			    JLabel l3=new JLabel("Enter the Quantity you want to buy: ");  
-			    l3.setBounds(100,150, 300,30);
+			    	JLabel l3=new JLabel("Enter the Quantity you want to buy: ");  
+			    	l3.setBounds(100,150, 300,30);
 			    
-			    tf2=new JTextField(); 
+			    	tf2=new JTextField(); 
 				tf2.setBounds(150,200,95,30);
 				
 				JButton b2= new JButton("Buy");
@@ -120,13 +120,13 @@ public class Account implements UserTransactions{
 				buyFrame.setVisible(false);
 			}
 		});
-        buyFrame.add(l1);
-        buyFrame.add(tf1);
-        buyFrame.add(b1);
-        buyFrame.setSize(400,500);
-        buyFrame.setLayout(null);
-        buyFrame.setVisible(true);
-        buyFrame.setLocationRelativeTo(null); 
+		buyFrame.add(l1);
+		buyFrame.add(tf1);
+		buyFrame.add(b1);
+		buyFrame.setSize(400,500);
+		buyFrame.setLayout(null);
+		buyFrame.setVisible(true);
+		buyFrame.setLocationRelativeTo(null); 
 	}
 
 	/**
@@ -137,9 +137,9 @@ public class Account implements UserTransactions{
 		
 		sellFrame = new JFrame("Sell a Coin");
 		JLabel l1=new JLabel("Choose the coin you want to sell: ");  
-	    l1.setBounds(100,100, 300,60);
+	    	l1.setBounds(100,100, 300,60);
 		
-	    final Set<String> allCoinsName = coins.keySet();
+	    	final Set<String> allCoinsName = coins.keySet();
 		Vector<String> vector = new Vector<String>(allCoinsName);
 		final JComboBox<String> cb= new JComboBox<String>(vector);
 		cb.setBounds(150,150,95,30);
@@ -161,13 +161,13 @@ public class Account implements UserTransactions{
 				final Coin coin = coins.get(coinName);
 				
 				JLabel l1=new JLabel("<html>You have " + coin.getQuantity() + " Quantity of " + coinName + " with <br/>Average Buy price of " + coin.getAverageBuyPrice() +  " to Sell<html>");  
-			    l1.setBounds(30,50, 350,30);
+			    	l1.setBounds(30,50, 350,30);
 			    
-			    final float price = RealTimePriceUsingAPI.getPriceOfCoin(coinName);
-			    JLabel l2=new JLabel("Current price of the coin: " + price);  
-			    l2.setBounds(50,100, 300,30);
+			    	final float price = RealTimePriceUsingAPI.getPriceOfCoin(coinName);
+			    	JLabel l2=new JLabel("Current price of the coin: " + price);  
+			    	l2.setBounds(50,100, 300,30);
 			    
-			    JLabel l3=new JLabel("Enter the Quantity of coin you want to sell: ");
+			    	JLabel l3=new JLabel("Enter the Quantity of coin you want to sell: ");
 				l3.setBounds(30,150,350,30);
 				
 				tf1=new JTextField(); 
@@ -195,11 +195,11 @@ public class Account implements UserTransactions{
 						accessPortfolioFrame.setVisible(true);
 					}
 				});
-		        sellPriceFrame.add(l1);sellPriceFrame.add(l2);sellPriceFrame.add(l3);
-		        sellPriceFrame.add(tf1);
-		        sellPriceFrame.add(b1);
-		        sellPriceFrame.setSize(400,500);
-		        sellPriceFrame.setLayout(null);
+				sellPriceFrame.add(l1);sellPriceFrame.add(l2);sellPriceFrame.add(l3);
+				sellPriceFrame.add(tf1);
+				sellPriceFrame.add(b1);
+				sellPriceFrame.setSize(400,500);
+				sellPriceFrame.setLayout(null);
 				sellPriceFrame.setVisible(true);
 				sellPriceFrame.setLocationRelativeTo(null); 
 				sellFrame.setVisible(false);
@@ -221,7 +221,7 @@ public class Account implements UserTransactions{
 	public void depositAmount() {
 		depositAmountFrame = new JFrame("Deposit Amount in USD");
 		JLabel l1=new JLabel("Enter the Amount you want to Deposit:");  
-	    l1.setBounds(100,100, 300,30);
+	    	l1.setBounds(100,100, 300,30);
 		
 		tf1=new JTextField(); 
 		tf1.setBounds(150,150,95,30);
@@ -229,7 +229,7 @@ public class Account implements UserTransactions{
 		JButton b1= new JButton("Submit");
 		b1.setBounds(150,200,95,30);
         
-        b1.addActionListener(new ActionListener() {
+        	b1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				float amount = Float.parseFloat(tf1.getText());
@@ -240,13 +240,13 @@ public class Account implements UserTransactions{
 			}
 		});
         
-        depositAmountFrame.add(l1);
-        depositAmountFrame.add(tf1);
-        depositAmountFrame.add(b1);
-        depositAmountFrame.setSize(400,500);
-        depositAmountFrame.setLayout(null);
-        depositAmountFrame.setVisible(true);
-        depositAmountFrame.setLocationRelativeTo(null); 
+		depositAmountFrame.add(l1);
+		depositAmountFrame.add(tf1);
+		depositAmountFrame.add(b1);
+		depositAmountFrame.setSize(400,500);
+		depositAmountFrame.setLayout(null);
+		depositAmountFrame.setVisible(true);
+		depositAmountFrame.setLocationRelativeTo(null); 
 	}
 
 	/**
@@ -256,10 +256,10 @@ public class Account implements UserTransactions{
 	public void withdrawAmount() {
 		withdrawAmountFrame = new JFrame("Deposit Amount in USD");
 		JLabel l1=new JLabel("Main Balance : "+ mainBalance);  
-	    l1.setBounds(100,50, 300,30);
+	    	l1.setBounds(100,50, 300,30);
 		
-	    JLabel l2=new JLabel("Enter the Amount you want to Withdraw: ");  
-	    l1.setBounds(100,100, 300,30);
+	    	JLabel l2=new JLabel("Enter the Amount you want to Withdraw: ");  
+	    	l1.setBounds(100,100, 300,30);
 	    
 		tf1=new JTextField(); 
 		tf1.setBounds(150,150,95,30);
@@ -267,7 +267,7 @@ public class Account implements UserTransactions{
 		JButton b1= new JButton("Submit");
 		b1.setBounds(150,200,95,30);
         
-        b1.addActionListener(new ActionListener() {
+        	b1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				float amount = Float.parseFloat(tf1.getText());
@@ -283,14 +283,14 @@ public class Account implements UserTransactions{
 			}
 		});
         
-        withdrawAmountFrame.add(l2);
-        withdrawAmountFrame.add(l1);
-        withdrawAmountFrame.add(tf1);
-        withdrawAmountFrame.add(b1);
-        withdrawAmountFrame.setSize(400,500);
-        withdrawAmountFrame.setLayout(null);
-        withdrawAmountFrame.setVisible(true);
-        withdrawAmountFrame.setLocationRelativeTo(null);
+		withdrawAmountFrame.add(l2);
+		withdrawAmountFrame.add(l1);
+		withdrawAmountFrame.add(tf1);
+		withdrawAmountFrame.add(b1);
+		withdrawAmountFrame.setSize(400,500);
+		withdrawAmountFrame.setLayout(null);
+		withdrawAmountFrame.setVisible(true);
+        	withdrawAmountFrame.setLocationRelativeTo(null);
 		
 	}
 	
@@ -318,7 +318,7 @@ public class Account implements UserTransactions{
 		JButton b1= new JButton("Back to Main Menu");
 		b1.setBounds(100,350,200,30);
         
-        b1.addActionListener(new ActionListener() {
+        	b1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				displayCoinsFrame.setVisible(false);
@@ -327,8 +327,8 @@ public class Account implements UserTransactions{
 		});
         
         
-        displayCoinsFrame.add(b1);
-        displayCoinsFrame.add(jlist);
+		displayCoinsFrame.add(b1);
+		displayCoinsFrame.add(jlist);
 		displayCoinsFrame.setSize(400,500);
 		displayCoinsFrame.setVisible(true);
 		displayCoinsFrame.setLocationRelativeTo(null);
@@ -339,7 +339,7 @@ public class Account implements UserTransactions{
 	 * It coins all the options to do a transaction
 	 */
 	public  void accessPortfolio() {
-		l1=new JLabel("Current Portfolio : " + accountName);  
+	    l1=new JLabel("Current Portfolio : " + accountName);  
 	    l1.setBounds(150,50, 400,30);  
 		
 	    JButton b1=new JButton("VIEW all the coins and coin balance");  
