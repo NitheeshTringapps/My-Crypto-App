@@ -30,7 +30,7 @@ public class AllAccounts {
 	public void createAccount() {
 		createAccountFrame = new JFrame("Create an Account");
 		JLabel l1=new JLabel("Enter your new Account name:");  
-	    l1.setBounds(100,50, 300,30);
+	    	l1.setBounds(100,50, 300,30);
 		
 		tf1=new JTextField(); 
 		tf1.setBounds(150,100,95,30);
@@ -38,7 +38,7 @@ public class AllAccounts {
 		JButton b1= new JButton("Submit");
 		b1.setBounds(150,150,95,30);
         
-        b1.addActionListener(new ActionListener() {
+        	b1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				accountName = tf1.getText();
@@ -48,13 +48,13 @@ public class AllAccounts {
 			}
 		});
         
-        createAccountFrame.add(l1);
-        createAccountFrame.add(tf1);
-        createAccountFrame.add(b1);
-        createAccountFrame.setSize(400,500);
-        createAccountFrame.setLayout(null);
-        createAccountFrame.setVisible(true);
-        createAccountFrame.setLocationRelativeTo(null);   
+		createAccountFrame.add(l1);
+		createAccountFrame.add(tf1);
+		createAccountFrame.add(b1);
+		createAccountFrame.setSize(400,500);
+		createAccountFrame.setLayout(null);
+		createAccountFrame.setVisible(true);
+		createAccountFrame.setLocationRelativeTo(null);   
 	}
 	
 	/**
@@ -81,7 +81,7 @@ public class AllAccounts {
 		JButton b1= new JButton("Back to Main Menu");
 		b1.setBounds(100,350,200,30);
         
-        b1.addActionListener(new ActionListener() {
+        	b1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				viewAllAccountFrame.setVisible(false);
@@ -104,7 +104,7 @@ public class AllAccounts {
 		visitAccountFrame = new JFrame("Goto an Account");
 		
 		JLabel l1=new JLabel("Select the Account you wish to go and Buy/Sell coins: ");  
-	    l1.setBounds(10,50, 600,30);
+	    	l1.setBounds(10,50, 600,30);
 		JButton b1= new JButton("Open");
 		b1.setBounds(150,250,95,30);
 		
@@ -132,10 +132,10 @@ public class AllAccounts {
 		visitAccountFrame.add(cb);
 		visitAccountFrame.add(l1);
 		visitAccountFrame.add(b1);
-        visitAccountFrame.setSize(400,500);
-        visitAccountFrame.setLayout(null);
-        visitAccountFrame.setVisible(true);
-        visitAccountFrame.setLocationRelativeTo(null);   
+		visitAccountFrame.setSize(400,500);
+		visitAccountFrame.setLayout(null);
+		visitAccountFrame.setVisible(true);
+		visitAccountFrame.setLocationRelativeTo(null);   
 	}
 	
 	/**
@@ -146,7 +146,7 @@ public class AllAccounts {
 		deleteAccountFrame = new JFrame("Delete an Account");
 		
 		JLabel l1=new JLabel("Select the Account you wish to delete");  
-	    l1.setBounds(50,50, 600,30);
+	    	l1.setBounds(50,50, 600,30);
 		JButton b1= new JButton("Delete");
 		b1.setBounds(150,250,95,30);
 		
@@ -187,10 +187,10 @@ public class AllAccounts {
 	 */
 	public void start() {
 		
-		JLabel l1=new JLabel("Welcome To Crypto Trading App");  
+	    JLabel l1=new JLabel("Welcome To Crypto Trading App");  
 	    l1.setBounds(80,50, 300,30);  
 	    
-		JButton b1=new JButton("Create a new Account");  
+	    JButton b1=new JButton("Create a new Account");  
 	    b1.setBounds(100,100,200,30);
 	    
 	    b1.addActionListener(new ActionListener() {
