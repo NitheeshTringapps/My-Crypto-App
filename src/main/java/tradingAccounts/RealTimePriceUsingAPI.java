@@ -32,7 +32,7 @@ public class RealTimePriceUsingAPI {
 		String uri = "https://api.coingecko.com/api/v3/simple/price?ids=" + coin + "&vs_currencies=usd";
 		String result = "";
 		try {
-			result = makeAPICall(uri);
+			result = makeAPICall(uri); //calling makeAPICall function to get JSON response in string format from the request URI
 		} catch (IOException e) {
 			System.out.println("Error: cannont access content - " + e.toString());
 		} catch (URISyntaxException e) {
@@ -62,15 +62,15 @@ public class RealTimePriceUsingAPI {
 	public static String makeAPICall(String uri)
 			throws URISyntaxException, IOException {
 		String response_content = "";
-		URIBuilder query = new URIBuilder(uri);
-		CloseableHttpClient client = HttpClients.createDefault();
-		HttpGet request = new HttpGet(query.build());
-		request.setHeader(HttpHeaders.ACCEPT, "application/json");
-		CloseableHttpResponse response = client.execute(request);
+		URIBuilder query = new URIBuilder(uri); //creating URI
+		CloseableHttpClient client = HttpClients.createDefault(); //creating client
+		HttpGet request = new HttpGet(query.build()); //creating request with CURL
+		request.setHeader(HttpHeaders.ACCEPT, "application/json"); //adding header to request CURL
+		CloseableHttpResponse response = client.execute(request); //sending request and getting response
 
 		try {
-			HttpEntity entity = response.getEntity();
-			response_content = EntityUtils.toString(entity);
+			HttpEntity entity = response.getEntity(); //Getting HTTP entity
+			response_content = EntityUtils.toString(entity); //Parsing entity to String
 			EntityUtils.consume(entity);
 		} finally {
 			response.close();
