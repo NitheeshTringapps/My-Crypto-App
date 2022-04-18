@@ -13,9 +13,9 @@ import java.util.*;
 import javax.swing.*;
 
 public class AllAccounts {
-	static LinkedHashMap<String, Account> allAccount = new LinkedHashMap<String, Account>();
+	static LinkedHashMap<String, Account> allAccount = new LinkedHashMap<String, Account>(); //To store all accounts
 	static Scanner sc = new Scanner(System.in);
-	public static JFrame mainMenuFrame = new JFrame("Main Menu");
+	public static JFrame mainMenuFrame = new JFrame("Main Menu"); //creating main frame
 	JFrame createAccountFrame;
 	JFrame viewAllAccountFrame;
 	JFrame visitAccountFrame;
@@ -28,9 +28,10 @@ public class AllAccounts {
 	 * and stores in allAccount
 	 */
 	public void createAccount() {
+		//creating createAccountFrame
 		createAccountFrame = new JFrame("Create an Account");
 		JLabel l1=new JLabel("Enter your new Account name:");  
-	    	l1.setBounds(100,50, 300,30);
+	    l1.setBounds(100,50, 300,30);
 		
 		tf1=new JTextField(); 
 		tf1.setBounds(150,100,95,30);
@@ -38,7 +39,8 @@ public class AllAccounts {
 		JButton b1= new JButton("Submit");
 		b1.setBounds(150,150,95,30);
         
-        	b1.addActionListener(new ActionListener() {
+		//runs when submit button is clicked
+        b1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				accountName = tf1.getText();
@@ -48,21 +50,23 @@ public class AllAccounts {
 			}
 		});
         
-		createAccountFrame.add(l1);
-		createAccountFrame.add(tf1);
-		createAccountFrame.add(b1);
-		createAccountFrame.setSize(400,500);
-		createAccountFrame.setLayout(null);
-		createAccountFrame.setVisible(true);
-		createAccountFrame.setLocationRelativeTo(null);   
+        createAccountFrame.add(l1);
+        createAccountFrame.add(tf1);
+        createAccountFrame.add(b1);
+        createAccountFrame.setSize(400,500);
+        createAccountFrame.setLayout(null);
+        createAccountFrame.setVisible(true);
+        createAccountFrame.setLocationRelativeTo(null);   
 	}
 	
 	/**
 	 * Shows all the accounts present
 	 */
 	public void viewAllAccount() {
+		//creating viewAllAccountFrame
 		viewAllAccountFrame = new JFrame("View all the Accounts");
 		Set<String> allAccountsNames = allAccount.keySet();
+		//Shows a dialog box if No Account is present
 		if(allAccountsNames.isEmpty()) {
 			JOptionPane.showMessageDialog(mainMenuFrame,"No Account is present!");  
 			mainMenuFrame.setVisible(true);
@@ -75,13 +79,15 @@ public class AllAccounts {
 			vector.add(accountName);
 		}
 		
+		//creating Jlist to display all the accounts present
 		JList<String> jlist = new JList<String>(vector);
 		jlist.setBounds(100, 100, 100, 30);
 		
 		JButton b1= new JButton("Back to Main Menu");
 		b1.setBounds(100,350,200,30);
         
-        	b1.addActionListener(new ActionListener() {
+		//runs when back to main menu button is clicked
+        b1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				viewAllAccountFrame.setVisible(false);
@@ -101,10 +107,11 @@ public class AllAccounts {
 	 * to buy/sell a cryptocurrency
 	 */
 	public void visitAccount() {
+		//creating a visitAccountFrame
 		visitAccountFrame = new JFrame("Goto an Account");
 		
 		JLabel l1=new JLabel("Select the Account you wish to go and Buy/Sell coins: ");  
-	    	l1.setBounds(10,50, 600,30);
+	    l1.setBounds(10,50, 600,30);
 		JButton b1= new JButton("Open");
 		b1.setBounds(150,250,95,30);
 		
@@ -113,6 +120,7 @@ public class AllAccounts {
 		final JComboBox<String> cb= new JComboBox<String>(vector);
 		cb.setBounds(150,150,95,30);
 		
+		//runs if Open button is clicked
 		b1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -132,10 +140,10 @@ public class AllAccounts {
 		visitAccountFrame.add(cb);
 		visitAccountFrame.add(l1);
 		visitAccountFrame.add(b1);
-		visitAccountFrame.setSize(400,500);
-		visitAccountFrame.setLayout(null);
-		visitAccountFrame.setVisible(true);
-		visitAccountFrame.setLocationRelativeTo(null);   
+        visitAccountFrame.setSize(400,500);
+        visitAccountFrame.setLayout(null);
+        visitAccountFrame.setVisible(true);
+        visitAccountFrame.setLocationRelativeTo(null);   
 	}
 	
 	/**
@@ -143,18 +151,21 @@ public class AllAccounts {
 	 * from AllAccount
 	 */
 	public void deleteAccount() {
+		//creating deleteAccountFrame
 		deleteAccountFrame = new JFrame("Delete an Account");
 		
 		JLabel l1=new JLabel("Select the Account you wish to delete");  
-	    	l1.setBounds(50,50, 600,30);
+	    l1.setBounds(50,50, 600,30);
 		JButton b1= new JButton("Delete");
 		b1.setBounds(150,250,95,30);
 		
+		//shows all account names in comboBox
 		final Set<String> allAccountNames = allAccount.keySet();
 		Vector<String> vector = new Vector<String>(allAccountNames);
 		final JComboBox<String> cb= new JComboBox<String>(vector);
 		cb.setBounds(150,150,95,30);
 		
+		//runs when delete button is clicked
 		b1.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -187,10 +198,11 @@ public class AllAccounts {
 	 */
 	public void start() {
 		
-	    JLabel l1=new JLabel("Welcome To Crypto Trading App");  
+		//Has various buttons to perform various actions
+		JLabel l1=new JLabel("Welcome To Crypto Trading App");  
 	    l1.setBounds(80,50, 300,30);  
 	    
-	    JButton b1=new JButton("Create a new Account");  
+		JButton b1=new JButton("Create a new Account");  
 	    b1.setBounds(100,100,200,30);
 	    
 	    b1.addActionListener(new ActionListener() {
