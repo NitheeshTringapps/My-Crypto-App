@@ -22,7 +22,7 @@ public class Account implements UserTransactions{
 		this.accountName = accountName;
 	}
 	
-	/**
+	/** 
 	 * called when user Buys a coin
 	 * When user buys a coin, it stores/update its value in their corresponding account
 	 */
